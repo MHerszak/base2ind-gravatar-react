@@ -8,7 +8,8 @@ Gravatar = React.createClass({
         rating: React.PropTypes.string,
         https: React.PropTypes.bool,
         "default": React.PropTypes.string,
-        className: React.PropTypes.string
+        className: React.PropTypes.string,
+        shape:React.PropTypes.string,
     },
     getDefaultProps:function() {
         return {
@@ -16,11 +17,26 @@ Gravatar = React.createClass({
             rating: 'g',
             https: false,
             "default": "retro",
-            className: ""
+            className: "",
+            shape:"circle",
         };
     },
+
+    getStyles:function()
+    {
+        let style =
+        {
+            root: {
+                borderRadius:this.props.shape === "circle" ? this.props.size/2 : 0
+            },
+        };
+
+        return style;
+    },
+
     render:function() {
-        var base, hash, modernBrowser, query, retinaQuery, retinaSrc, src;
+        var base, hash, modernBrowser, query, retinaQuery, retinaSrc, src,styles;
+        styles = this.getStyles();
         base = this.props.https ? "https://secure.gravatar.com/avatar/" : 'http://www.gravatar.com/avatar/';
         query = querystring.stringify({
             s: this.props.size,
@@ -48,10 +64,24 @@ Gravatar = React.createClass({
         if (typeof window !== "undefined" && window !== null) {
             modernBrowser = 'srcset' in document.createElement('img');
         }
-        if (!modernBrowser && isRetina()) {
-            return (<img style={this.props.style} className={"react-gravatar " + this.props.className} src={retinaSrc} height={this.props.size} width={this.props.size} />);
-        } else {
-            return (<img style={this.props.style} className={"react-gravatar " + this.props.className} src={src} srcSet={retinaSrc + " 2x"} height={this.props.size} width={this.props.size} />);
+        if (!modernBrowser && isRetina())
+        {
+            return (<img
+                style={Object.assign({}, this.props.style, styles.root)}
+                className={"react-gravatar " + this.props.className}
+                src={retinaSrc}
+                height={this.props.size}
+                width={this.props.size} />);
+        }
+        else
+        {
+            return (<img
+                style={Object.assign({}, this.props.style, styles.root)}
+                className={"react-gravatar " + this.props.className}
+                src={src}
+                srcSet={retinaSrc + " 2x"}
+                height={this.props.size}
+                width={this.props.size} />);
         }
     }
 });
