@@ -1,8 +1,3 @@
-/*var isRetina, querystring;*/
-
-/*React = require('react');*/
-
-/*md5 = require('md5');*/
 
 Gravatar = React.createClass({
     displayName: 'Gravatar',
