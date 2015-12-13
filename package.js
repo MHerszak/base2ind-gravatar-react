@@ -1,6 +1,10 @@
 Package.describe({
   name: 'browserstudios:gravatar-react',
+<<<<<<< HEAD
   version: '0.0.2',
+=======
+  version: '0.0.1',
+>>>>>>> 76f6453074cb06a65d280d1efcb7cb16e26a1a3f
   summary: 'React component for rendering a gravatar profile image.',
   // URL to the Git repository containing the source code for this package.
   git: 'https://github.com/MHerszak/base2ind-gravatar-react.git',
@@ -40,6 +44,6 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
-  api.use('base2ind:gravatar-react');
+  api.use('browserstudios:gravatar-react');
   api.addFiles('gravatar-react-tests.js');
 });
