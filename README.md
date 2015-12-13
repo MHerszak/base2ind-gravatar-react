@@ -10,5 +10,5 @@ meteor add base2ind:gravatar-react
 ## Example
 
 ```javascript
-<Gravatar email="mathews.kyle@gmail.com" size=100 rating="pg" https default="monsterid" className="CustomAvatar-image" />
+<Gravatar email="michel.herszak@gmail.com" size=100 rating="pg" https default="monsterid" className="CustomAvatar-image" />
 ```
