@@ -5,7 +5,7 @@ React component for rendering a gravatar profile image.
 ## Install
 
 ```javascript
-meteor add base2ind:gravatar-react
+meteor add browserstudios:gravatar-react
 ```
 ## Example
 
