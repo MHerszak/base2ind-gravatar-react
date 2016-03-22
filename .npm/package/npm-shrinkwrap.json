@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "is-retina": {
+      "version": "1.0.3"
+    },
+    "querystring": {
+      "version": "0.2.0"
+    }
+  }
+}

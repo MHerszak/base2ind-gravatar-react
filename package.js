@@ -1,6 +1,6 @@
 Package.describe({
   name: 'browserstudios:gravatar-react',
-  version: '0.0.2',
+  version: '0.0.3',
   summary: 'React component for rendering a gravatar profile image.',
   // URL to the Git repository containing the source code for this package.
   git: 'https://github.com/MHerszak/base2ind-gravatar-react.git',
@@ -21,13 +21,13 @@ Package.onUse(function(api) {
 
     'ecmascript',
     'react@0.14.1_1',
-    'cosmos:browserify@0.9.2',
+    //'cosmos:browserify@0.9.2',
     'jparker:crypto-md5@0.1.1',
 
   ],['client']);
 
   api.addFiles([
-    './client.browserify.js',
+    //'./client.browserify.js',
     './gravatar-react.jsx'
   ],['client']);
 

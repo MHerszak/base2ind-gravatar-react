@@ -1,3 +1,6 @@
+import React, { PropTypes, Component } from 'react';
+import querystring from 'querystring';
+import isRetina from 'is-retina';
 
 Gravatar = React.createClass({
     displayName: 'Gravatar',
